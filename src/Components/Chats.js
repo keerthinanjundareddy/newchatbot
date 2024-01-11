@@ -214,14 +214,14 @@ console.log("before api call",conversationHistory)
   // ... (rest of your component)
 
   // this is for setting initial message
-useEffect(()=>{
-  //  Initial message from Pannaga
-   const initializePannagaMessage = "Hello! how can i assist you?";
-   setConversationHistory([
-      `Pannaga: ${initializePannagaMessage}`,
-     ]);
+// useEffect(()=>{
+//   //  Initial message from Pannaga
+//    const initializePannagaMessage = "Hello! how can i assist you?";
+//    setConversationHistory([
+//       `Pannaga: ${initializePannagaMessage}`,
+//      ]);
     
-  }, []);
+//   }, []);
 
   // in new page when new chat is started for initial message
   const initializePannagaMessage = () => {
@@ -272,9 +272,9 @@ useEffect(()=>{
       <div className={`navbar ${inputFocused ? 'navbar-focused' : ''}`}>
         <div className='chat-parent-div'>
           <div style={{ display: 'flex', flexDirection: 'row', gap: '10px', alignItems: 'center' }} className='inner-chat-paarent-div'>
-            <div>
+            {/* <div>
               <img src={sales} alt="funding-icon" style={{ width: '40px', height: '40px' }} />
-            </div>
+            </div> */}
             <div style={{ color: '#21261B', fontWeight: '600', letterSpacing: '0.5px' }}>
               CHATBOT.AI
             </div>
@@ -356,13 +356,24 @@ useEffect(()=>{
         </div>
       </div>
 
+      
+
       <div className='chat-app' >
         <div className='chat' >
+
+
+          
 
           <div
             className='message-list'
             ref={messageListRef}
           >
+
+            {/* <div>hiii</div> */}
+            <div className='bot-messages'>
+      <div className='user-name-div pannaga-name'>BOT</div>
+      <div className='user-question-div pannaga-question'>hey?how can i assist you</div>
+    </div>
             {conversationHistory.map((message, index) => (
               <div key={index} className='message'>
                 {message.startsWith('User') ? (
