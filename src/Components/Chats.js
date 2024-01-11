@@ -99,6 +99,7 @@ console.log("before api call",conversationHistory)
         const modifiedResponse = chatbotResponse
           // .replace(/\bHello!,This is Pannaga from KIA Motors\b/g, '')
           .replace('<END_OF_TURN>', '')
+          // trim is for triming white space
           .trim();
         console.log('chatbotresponse', modifiedResponse);
 
